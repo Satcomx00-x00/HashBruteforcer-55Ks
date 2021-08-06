@@ -4,7 +4,6 @@ from colorama import Back,Style,Fore,init
 import time
 import codecs
 from itertools import (takewhile,repeat)
-from pprint import pprint
 
 init(autoreset=True)
 
@@ -40,12 +39,12 @@ def bruteforce(actual_password_hash):
             for guess_password, word_try in read_in_chunks(f):
                 # KEY SPEED CALC
                 c+=1
-                if time.time()-starter >= float(1.00):
-                    try:
-                        print(str(c) + " Keys/s")
-                        starter = time.time()
-                        c=0
-                    except:pass
+                # if time.time()-starter >= float(1.00):
+                #     try:
+                #         print(str(c) + " Keys/s")
+                #         starter = time.time()
+                #         c=0
+                #     except:pass
                 # END KEY SPEED CALC
                 # print(str(c) + ":" + guess_password + "  VS  " + actual_password_hash)
                 if guess_password == actual_password_hash:
